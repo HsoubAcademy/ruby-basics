@@ -27,8 +27,8 @@ module TicTacToe
             winner = nil
             until @board.full?
                 round(last_player)
-                winner = 'X' if check_choices(choices['X'])
-                winner = 'O' if check_choices(choices['O'])
+                winner = 'X' if check_choices(@choices['X'])
+                winner = 'O' if check_choices(@choices['O'])
                 break if winner
                 last_player = last_player == 'X' ? 'O' : 'X'
             end
@@ -69,7 +69,7 @@ module TicTacToe
         end
 
         def do_move(player, place)
-            choices[player].push place
+            @choices[player].push place
             @board.set(place, player)
         end
     end
