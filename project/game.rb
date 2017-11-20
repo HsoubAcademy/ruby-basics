@@ -52,7 +52,7 @@ module TicTacToe
         end
 
         def round(player)
-            @board.display_numbers
+            @board.display_numbers if @board.empty?
             puts "Player #{player}, choose a place"
             place = read_place
             do_move(player, place)

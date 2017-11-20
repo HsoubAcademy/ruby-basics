@@ -12,6 +12,10 @@ module TicTacToe
             @cells.none?(&:nil?)
         end
 
+        def empty?
+            @cells.all?(&:nil?)
+        end
+
         def display
             @cells.each_slice(3) do |row|
                 puts row.map{|c| c.to_s.rjust(2, ' ') }.to_a.join(' |')
