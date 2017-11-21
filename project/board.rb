@@ -17,10 +17,12 @@ module TicTacToe
         end
 
         def display
-            @cells.each_slice(3) do |row|
-                puts row.map{|c| c.to_s.rjust(2, ' ') }.to_a.join(' |')
-                puts "-----------"
-            end
+            vcells = @cells.map { |c| c.nil? ? ' ' : c }
+            puts " #{vcells[0]} | #{vcells[1]} | #{vcells[2]}"
+            puts "-----------"
+            puts " #{vcells[3]} | #{vcells[4]} | #{vcells[5]}"
+            puts "-----------"
+            puts " #{vcells[6]} | #{vcells[7]} | #{vcells[8]}"
         end
 
         def display_numbers
