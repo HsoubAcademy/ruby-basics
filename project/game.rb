@@ -61,12 +61,8 @@ module TicTacToe
 
         def read_place
             place = gets.chomp.to_i
-            while place > 9 or place < 1
-                puts "Please choose a number between 1..9"
-                place = gets.chomp.to_i
-            end
-            until !@board.place_occupied? place
-                puts "Place #{place} is occupied, try another"
+            until place <= 9 and place >= 1 and !@board.place_occupied? place
+                puts "Please choose a number between 1..9 for a place that it's not occupied."
                 place = gets.chomp.to_i
             end
             place
