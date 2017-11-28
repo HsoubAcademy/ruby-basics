@@ -22,7 +22,7 @@ module TicTacToe
         end
 
         def play
-            puts 'welcome'
+            puts 'Welcome to TicTacToe'
             last_player = 'X'
             winner = nil
             until @board.full?
