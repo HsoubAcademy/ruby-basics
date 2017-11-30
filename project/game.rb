@@ -23,14 +23,14 @@ module TicTacToe
 
         def play
             puts 'Welcome to TicTacToe'
-            last_player = 'X'
+            current_player = 'X'
             winner = nil
             until @board.full?
-                round(last_player)
+                round(current_player)
                 winner = 'X' if check_choices(@choices['X'])
                 winner = 'O' if check_choices(@choices['O'])
                 break if winner
-                last_player = last_player == 'X' ? 'O' : 'X'
+                current_player = current_player == 'X' ? 'O' : 'X'
             end
             display_result(winner)
         end
